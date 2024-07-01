@@ -9,9 +9,9 @@ UFMODBus::UFMODBus(const FObjectInitializer &ObjectInitializer)
 }
 
 /** Get tags to show in content view */
-void UFMODBus::GetAssetRegistryTags(FAssetRegistryTagsContext Context) const
+void UFMODBus::GetAssetRegistryTags(TArray<FAssetRegistryTag> &OutTags) const
 {
-    Super::GetAssetRegistryTags(Context);
+    Super::GetAssetRegistryTags(OutTags);
 }
 
 FString UFMODBus::GetDesc()

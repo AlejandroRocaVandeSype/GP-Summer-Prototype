@@ -21,7 +21,7 @@ public:
 
 private:
     /** Get tags to show in content view */
-    virtual void GetAssetRegistryTags(FAssetRegistryTagsContext Context) const override;
+    virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag> &OutTags) const override;
 
     /** Descriptive name */
     virtual FString GetDesc() override;

@@ -4,10 +4,8 @@
 
 #include "Misc/Guid.h"
 #include "CoreMinimal.h"
-#include "UObject/AssetRegistryTagsContext.h"
 #include "FMODAsset.generated.h"
 
-class FAssetRegistryTagsContext;
 /**
  * FMOD Asset.
  */
@@ -23,7 +21,7 @@ public:
 
 protected:
     /** Get tags to show in content view */
-    virtual void GetAssetRegistryTags(FAssetRegistryTagsContext Context) const override;
+    virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag> &OutTags) const override;
 
 private:
     /** Non default instances of UFMODAsset are assets */

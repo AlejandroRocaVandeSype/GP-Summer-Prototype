@@ -9,9 +9,9 @@ UFMODVCA::UFMODVCA(const FObjectInitializer &ObjectInitializer)
 }
 
 /** Get tags to show in content view */
-void UFMODVCA::GetAssetRegistryTags(FAssetRegistryTagsContext Context) const
+void UFMODVCA::GetAssetRegistryTags(TArray<FAssetRegistryTag> &OutTags) const
 {
-    Super::GetAssetRegistryTags(Context);
+    Super::GetAssetRegistryTags(OutTags);
 }
 
 FString UFMODVCA::GetDesc()

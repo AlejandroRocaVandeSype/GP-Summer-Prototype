@@ -9,9 +9,9 @@ UFMODPort::UFMODPort(const FObjectInitializer &ObjectInitializer)
 }
 
 /** Get tags to show in content view */
-void UFMODPort::GetAssetRegistryTags(FAssetRegistryTagsContext Context) const
+void UFMODPort::GetAssetRegistryTags(TArray<FAssetRegistryTag> &OutTags) const
 {
-    Super::GetAssetRegistryTags(Context);
+    Super::GetAssetRegistryTags(OutTags);
 }
 
 FString UFMODPort::GetDesc()

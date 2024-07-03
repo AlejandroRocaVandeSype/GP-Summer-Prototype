@@ -5,7 +5,11 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset"
+				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Scenes/TestMap_Alejandro.umap",
+				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Scenes/TestMap_Alex.umap",
+				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/BP_AudioTest.uasset",
+				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Audio/NewSoundSubmix.uasset"
 			]
 		}
 	]

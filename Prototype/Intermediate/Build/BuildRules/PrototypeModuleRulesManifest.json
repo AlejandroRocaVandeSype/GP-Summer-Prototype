@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"C:\\UnrealProjects\\GP-Summer-Prototype\\Prototype\\Source\\Prototype\\Prototype.Build.cs",
-		"C:\\UnrealProjects\\GP-Summer-Prototype\\Prototype\\Source\\Prototype.Target.cs",
-		"C:\\UnrealProjects\\GP-Summer-Prototype\\Prototype\\Source\\PrototypeEditor.Target.cs"
-	],
-	"EngineVersion": "5.3.2"
-}

@@ -85,8 +85,8 @@ void AFPCharacter::Move(const FInputActionValue& Value)
 	if (Controller != nullptr)
 	{
 		// add movement 
-		AddMovementInput(GetActorRightVector(), MovementVector.X);
-		AddMovementInput(GetActorForwardVector(), MovementVector.Y);
+		AddMovementInput(FirstPersonCameraComponent->GetRightVector(), MovementVector.X);
+		AddMovementInput(FirstPersonCameraComponent->GetForwardVector(), MovementVector.Y);
 		
 	}
 }

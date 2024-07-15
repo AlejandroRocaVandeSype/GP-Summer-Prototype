@@ -38,6 +38,16 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* DiveUpAction;
+
+	float MouseSensitivity{ 0.4f };
+
+public:
+	/** Look Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* LookAction;
+
 public:
 	// Sets default values for this character's properties
 	AFPCharacter();
@@ -48,6 +58,10 @@ protected:
 
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
+
+	void Look(const FInputActionValue& Value);
+
+	void DiveUp();
 
 
 protected:

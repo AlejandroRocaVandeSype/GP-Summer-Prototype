@@ -54,6 +54,7 @@ void AFPCharacter::Tick(float DeltaTime)
 
 }
 
+
 // Called to bind functionality to input
 void AFPCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -63,9 +64,14 @@ void AFPCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
-		
+
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AFPCharacter::Move);
+
+		// Looking around
+		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AFPCharacter::Look);
+
+		EnhancedInputComponent->BindAction(DiveUpAction, ETriggerEvent::Ongoing, this, &AFPCharacter::DiveUp);
 
 	}
 }
@@ -79,8 +85,26 @@ void AFPCharacter::Move(const FInputActionValue& Value)
 	if (Controller != nullptr)
 	{
 		// add movement 
-		AddMovementInput(GetActorForwardVector(), MovementVector.Y);
 		AddMovementInput(GetActorRightVector(), MovementVector.X);
+		AddMovementInput(GetActorForwardVector(), MovementVector.Y);
+		
 	}
 }
 
+void AFPCharacter::Look(const FInputActionValue& Value)
+{
+	FVector2D LookAxisVector = Value.Get<FVector2D>();
+
+	if (Controller != nullptr)
+	{
+		
+		AddControllerPitchInput(LookAxisVector.Y * MouseSensitivity);
+		AddControllerYawInput(LookAxisVector.X * MouseSensitivity);
+	}
+
+}
+
+void AFPCharacter::DiveUp()
+{
+	AddMovementInput(GetActorUpVector(), 10000000.f);
+}

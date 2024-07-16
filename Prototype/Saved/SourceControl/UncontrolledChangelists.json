@@ -14,6 +14,8 @@
 				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/General/BP_FPGameMode.uasset",
 				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/Input/Actions/IA_Look.uasset",
 				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/Input/Actions/IA_MoveUP.uasset",
+				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/Input/Actions/IA_FasterMovement.uasset",
+				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/Input/Actions/IA_MoveDown.uasset",
 				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/Character/BP_Character.uasset",
 				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/General/BP_FirstPersonGameMode.uasset",
 				"C:/UnrealProjects/GP-Summer-Prototype/Prototype/Content/Blueprints/General/BP_FirstPersonController.uasset"

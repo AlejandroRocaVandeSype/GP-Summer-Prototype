@@ -41,12 +41,20 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* DiveUpAction;
 
-	float MouseSensitivity{ 0.4f };
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* DiveDownAction;
 
-public:
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* FasterMoveAction;
+
+	float MouseSensitivity{ 0.4f };
+
+	const float NormalSwimSpeed{ 500.f };
+	const float FastSwimSpeed{ 900.f };
 
 public:
 	// Sets default values for this character's properties
@@ -56,14 +64,6 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	/** Called for movement input */
-	void Move(const FInputActionValue& Value);
-
-	void Look(const FInputActionValue& Value);
-
-	void DiveUp();
-
-
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
@@ -71,5 +71,19 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+private:
+
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
+
+	void DiveUp();
+	void DiveDown();
+
+	void StartFastSwimming();
+	void StopFastSwimming();
+
+	void SetupCharacterMovement();
+
 
 };

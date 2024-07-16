@@ -16,5 +16,8 @@ class PROTOTYPE_API AFPGameMode : public AGameModeBase
 
 public:
 	AFPGameMode();
+
+protected:
+	virtual void BeginPlay() override;
 	
 };

@@ -11,7 +11,9 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
-            "c:\\unrealprojects\\gp-summer-prototype\\prototype\\intermediate\\build\\win64\\unrealeditor\\inc\\prototype\\uht\\fpgamemode.generated.h"
+            "c:\\unrealprojects\\gp-summer-prototype\\prototype\\intermediate\\build\\win64\\unrealeditor\\inc\\prototype\\uht\\fpgamemode.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\physicsvolume.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\physicsvolume.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

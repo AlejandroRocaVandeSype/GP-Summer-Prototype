@@ -7,6 +7,7 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
 
@@ -45,6 +46,7 @@ void AFPCharacter::BeginPlay()
 		}
 	}
 
+	SetupCharacterMovement();
 }
 
 // Called every frame
@@ -72,6 +74,10 @@ void AFPCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AFPCharacter::Look);
 
 		EnhancedInputComponent->BindAction(DiveUpAction, ETriggerEvent::Ongoing, this, &AFPCharacter::DiveUp);
+		EnhancedInputComponent->BindAction(DiveDownAction, ETriggerEvent::Ongoing, this, &AFPCharacter::DiveDown);
+
+		EnhancedInputComponent->BindAction(FasterMoveAction, ETriggerEvent::Started, this, &AFPCharacter::StartFastSwimming);
+		EnhancedInputComponent->BindAction(FasterMoveAction, ETriggerEvent::Completed, this, &AFPCharacter::StopFastSwimming);
 
 	}
 }
@@ -106,5 +112,30 @@ void AFPCharacter::Look(const FInputActionValue& Value)
 
 void AFPCharacter::DiveUp()
 {
-	AddMovementInput(GetActorUpVector(), 10000000.f);
+	AddMovementInput(GetActorUpVector());
+}
+
+void AFPCharacter::DiveDown()
+{
+	AddMovementInput(-GetActorUpVector());
+}
+
+void AFPCharacter::StartFastSwimming()
+{
+	GetCharacterMovement()->MaxSwimSpeed = FastSwimSpeed;
+}
+
+void AFPCharacter::StopFastSwimming()
+{
+	GetCharacterMovement()->MaxSwimSpeed = NormalSwimSpeed;
+}
+
+void AFPCharacter::SetupCharacterMovement()
+{
+	// Swimming Mode
+	auto characterMovement{ GetCharacterMovement() };
+	characterMovement->SetMovementMode(EMovementMode::MOVE_Swimming);
+
+	characterMovement->MaxSwimSpeed = NormalSwimSpeed;
+	characterMovement->BrakingDecelerationSwimming = 300.f;
 }

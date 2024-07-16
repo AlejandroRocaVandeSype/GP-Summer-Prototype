@@ -53,9 +53,17 @@ void EmptyLinkFunctionForGeneratedCodeFPCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_DiveUpAction;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DiveDownAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_DiveDownAction;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_LookAction_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_FasterMoveAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_FasterMoveAction;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -138,6 +146,14 @@ void EmptyLinkFunctionForGeneratedCodeFPCharacter() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveUpAction = { "DiveUpAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFPCharacter, DiveUpAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveUpAction_MetaData), Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveUpAction_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveDownAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "FPCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveDownAction = { "DiveDownAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFPCharacter, DiveDownAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveDownAction_MetaData), Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveDownAction_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
@@ -150,14 +166,24 @@ void EmptyLinkFunctionForGeneratedCodeFPCharacter() {}
 #endif
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFPCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction_MetaData), Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFPCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction_MetaData), Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFPCharacter_Statics::NewProp_FasterMoveAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "FPCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPCharacter_Statics::NewProp_FasterMoveAction = { "FasterMoveAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFPCharacter, FasterMoveAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFPCharacter_Statics::NewProp_FasterMoveAction_MetaData), Z_Construct_UClass_AFPCharacter_Statics::NewProp_FasterMoveAction_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFPCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_Mesh1P,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_FirstPersonCameraComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_DefaultMappingContext,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_MoveAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveUpAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_DiveDownAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_LookAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPCharacter_Statics::NewProp_FasterMoveAction,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFPCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFPCharacter>::IsAbstract,
@@ -197,9 +223,9 @@ void EmptyLinkFunctionForGeneratedCodeFPCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_GP_Summer_Prototype_Prototype_Source_Prototype_FPCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFPCharacter, AFPCharacter::StaticClass, TEXT("AFPCharacter"), &Z_Registration_Info_UClass_AFPCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFPCharacter), 2497816674U) },
+		{ Z_Construct_UClass_AFPCharacter, AFPCharacter::StaticClass, TEXT("AFPCharacter"), &Z_Registration_Info_UClass_AFPCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFPCharacter), 2729214724U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_GP_Summer_Prototype_Prototype_Source_Prototype_FPCharacter_h_3803364253(TEXT("/Script/Prototype"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_GP_Summer_Prototype_Prototype_Source_Prototype_FPCharacter_h_3358541817(TEXT("/Script/Prototype"),
 		Z_CompiledInDeferFile_FID_UnrealProjects_GP_Summer_Prototype_Prototype_Source_Prototype_FPCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProjects_GP_Summer_Prototype_Prototype_Source_Prototype_FPCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -21,10 +21,9 @@ void ACustomAudioCapture::BeginPlay()
 
 	UAudioCaptureComponent* AudioCapture = Cast<UAudioCaptureComponent>(
 		AddComponentByClass(UAudioCaptureComponent::StaticClass(), false, FTransform::Identity, false));
-
-	Submix = NewObject<USoundSubmix>();
+	
+	AudioCapture->JitterLatencyFrames = 30;
 	AudioCapture->SoundSubmix = Submix;
-
 	AudioCapture->Start();
 
 	Audio::FMixerDevice* MixerDevice = FAudioDeviceManager::GetAudioMixerDeviceFromWorldContext(GetWorld());

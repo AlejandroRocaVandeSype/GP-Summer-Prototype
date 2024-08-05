@@ -67,11 +67,11 @@ void AFPCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 
-		// Moving
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AFPCharacter::Move);
-
 		// Looking around
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AFPCharacter::Look);
+
+		// MOVEMENT
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AFPCharacter::Move);
 
 		EnhancedInputComponent->BindAction(DiveUpAction, ETriggerEvent::Ongoing, this, &AFPCharacter::DiveUp);
 		EnhancedInputComponent->BindAction(DiveDownAction, ETriggerEvent::Ongoing, this, &AFPCharacter::DiveDown);
@@ -79,6 +79,9 @@ void AFPCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 		EnhancedInputComponent->BindAction(FasterMoveAction, ETriggerEvent::Started, this, &AFPCharacter::StartFastSwimming);
 		EnhancedInputComponent->BindAction(FasterMoveAction, ETriggerEvent::Completed, this, &AFPCharacter::StopFastSwimming);
 
+		// SINGING
+		EnhancedInputComponent->BindAction(SingAction, ETriggerEvent::Started, this, &AFPCharacter::StartSinging);
+		EnhancedInputComponent->BindAction(SingAction, ETriggerEvent::Completed, this, &AFPCharacter::StopSinging);
 	}
 }
 
@@ -128,6 +131,18 @@ void AFPCharacter::StartFastSwimming()
 void AFPCharacter::StopFastSwimming()
 {
 	GetCharacterMovement()->MaxSwimSpeed = NormalSwimSpeed;
+}
+
+void AFPCharacter::StartSinging()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Singing Started"));
+	IsPlayerSinging = true;
+}
+
+void AFPCharacter::StopSinging()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Singing Ended"));
+	IsPlayerSinging = false;
 }
 
 void AFPCharacter::SetupCharacterMovement()

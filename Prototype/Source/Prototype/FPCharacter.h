@@ -51,10 +51,16 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* FasterMoveAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* SingAction;
+
 	float MouseSensitivity{ 0.4f };
 
 	const float NormalSwimSpeed{ 500.f };
 	const float FastSwimSpeed{ 900.f };
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Audio, meta = (AllowPrivateAccess = "true"))
+	bool IsPlayerSinging{ false };
 
 public:
 	// Sets default values for this character's properties
@@ -82,6 +88,9 @@ private:
 
 	void StartFastSwimming();
 	void StopFastSwimming();
+
+	void StartSinging();
+	void StopSinging();
 
 	void SetupCharacterMovement();
 

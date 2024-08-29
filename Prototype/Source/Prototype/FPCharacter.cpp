@@ -82,6 +82,7 @@ void AFPCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 		// SINGING
 		EnhancedInputComponent->BindAction(SingAction, ETriggerEvent::Started, this, &AFPCharacter::StartSinging);
 		EnhancedInputComponent->BindAction(SingAction, ETriggerEvent::Completed, this, &AFPCharacter::StopSinging);
+
 	}
 }
 

@@ -64,7 +64,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Audio, meta = (AllowPrivateAccess = "true"))
 	bool IsPlayerSinging{ false };
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = FMOD, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Audio, meta = (AllowPrivateAccess = "true"))
 	UFMODEvent* PlayerLocomotionEvent;
 
 public:
@@ -101,7 +101,5 @@ private:
 
 	// Audio related variables
 	FFMODEventInstance PlayerLocmotionInst;
-	int PlayerSpeed{ 0 };
-
 
 };

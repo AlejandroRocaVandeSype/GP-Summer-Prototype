@@ -8,7 +8,7 @@ public class Prototype : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "AudioCapture", "SignalProcessing", "AudioMixer" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "AudioCapture", "SignalProcessing", "AudioMixer", "FMODStudio" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

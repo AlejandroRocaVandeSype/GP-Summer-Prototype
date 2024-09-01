@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "FMODBlueprintStatics.h"
 #include "FPCharacter.generated.h"
 
 
@@ -13,6 +14,7 @@ class UCameraComponent;
 class UInputAction;
 class UInputMappingContext;
 struct FInputActionValue;
+class UFMODEvent;
 
 UCLASS()
 class PROTOTYPE_API AFPCharacter : public ACharacter
@@ -62,6 +64,9 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Audio, meta = (AllowPrivateAccess = "true"))
 	bool IsPlayerSinging{ false };
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = FMOD, meta = (AllowPrivateAccess = "true"))
+	UFMODEvent* PlayerLocomotionEvent;
+
 public:
 	// Sets default values for this character's properties
 	AFPCharacter();
@@ -93,6 +98,10 @@ private:
 	void StopSinging();
 
 	void SetupCharacterMovement();
+
+	// Audio related variables
+	FFMODEventInstance PlayerLocmotionInst;
+	int PlayerSpeed{ 0 };
 
 
 };

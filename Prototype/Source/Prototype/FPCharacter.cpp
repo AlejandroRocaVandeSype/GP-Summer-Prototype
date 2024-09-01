@@ -10,6 +10,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
+#include "FMODEvent.h"
 
 // Sets default values
 AFPCharacter::AFPCharacter()
@@ -54,6 +55,13 @@ void AFPCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// Updating swim speed, this could be done at a lower interval than per tick but for now this will do
+	if (UFMODBlueprintStatics::EventInstanceIsValid(PlayerLocmotionInst))
+	{
+		float velocityNormalised = GetVelocity().Length() / FastSwimSpeed;
+		UFMODBlueprintStatics::EventInstanceSetParameter(PlayerLocmotionInst, FName("SwimSpeed"), velocityNormalised);
+
+	}
 }
 
 
@@ -97,8 +105,9 @@ void AFPCharacter::Move(const FInputActionValue& Value)
 		// add movement 
 		AddMovementInput(FirstPersonCameraComponent->GetRightVector(), MovementVector.X);
 		AddMovementInput(FirstPersonCameraComponent->GetForwardVector(), MovementVector.Y);
-		
+
 	}
+
 }
 
 void AFPCharacter::Look(const FInputActionValue& Value)
@@ -154,4 +163,7 @@ void AFPCharacter::SetupCharacterMovement()
 
 	characterMovement->MaxSwimSpeed = NormalSwimSpeed;
 	characterMovement->BrakingDecelerationSwimming = 300.f;
+
+	// AUDIO: Starting player locomotion event
+	PlayerLocmotionInst = UFMODBlueprintStatics::PlayEvent2D(GetWorld(), PlayerLocomotionEvent, true);
 }
